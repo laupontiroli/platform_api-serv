@@ -28,3 +28,17 @@ Instale as dependências com:
 ``` shell
 pip3 install -r requirements.txt
 ```
+
+## Deployment
+
+O material utiliza o mkdocs para gerar a documentação. Para visualizar a documentação, execute o comando:
+
+``` shell
+mkdocs serve
+```
+
+Para subir ao GitHub Pages, execute o comando:
+
+``` shell
+mkdocs gh-deploy
+```
