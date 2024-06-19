@@ -70,6 +70,10 @@ kubectl logs <pod>
 kubectl describe pod <pod>
 ```
 
+``` shell title="reset the core dns"
+kubectl -n kube-system rollout restart deployment coredns
+```
+
 ## Services
 
 - ClusterIp: apenas dentro do cluster.
