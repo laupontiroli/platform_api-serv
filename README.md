@@ -10,18 +10,9 @@ python3 -m venv env
 
 Ative o ambiente virtual (**você deve fazer isso sempre que for executar algum script deste repositório**):
 
-- Linux/MacOS:
-
-    ``` shell
-    . env/bin/activate
-    ```
-
-- Windows:
-
-    ``` shell
-    env\Scripts\activate
-    ```
-
+``` shell
+source ./env/bin/activate
+```
 
 Instale as dependências com:
 
@@ -31,7 +22,7 @@ pip3 install -r requirements.txt
 
 ## Deployment
 
-O material utiliza o mkdocs para gerar a documentação. Para visualizar a documentação, execute o comando:
+O material utiliza o [mkdocs](https://www.mkdocs.org/) para gerar a documentação. Para visualizar a documentação, execute o comando:
 
 ``` shell
 mkdocs serve

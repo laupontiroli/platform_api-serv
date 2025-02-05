@@ -1,9 +1,18 @@
 site_name: Platforms, Microservices, DevOps and APIs
 site_author: Sandmann, H.
-site_url: https://hsandmann.github.io/platform
+site_url: https://insper.github.io/platform
+repo_url: https://github.com/insper/platform
 
 theme:
   name: material
+  palette:
+    # primary: grey
+    # Light mode
+    - scheme: default
+      primary: grey
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
   features:
     - content.code.copy
     - content.code.select
@@ -11,6 +20,7 @@ theme:
     - content.tooltips
     - navigation.instant
     - navigation.instant.progress
+    - navigation.top
     - navigation.path
     - navigation.tracking
   icon:
@@ -46,7 +56,8 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      url_download: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -57,18 +68,32 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true  
   - footnotes
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - tables
+
 
 plugins:
   - glightbox
-  - git-revision-date-localized
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-authors
+  - git-committers:
+      repository: hsandmann/hsandmann.github.com
+      branch: main
   - search
+  - badges
   - markdown-exec
+  - render_swagger:
+      allow_arbitrary_locations : true
   - termynal:
       prompt_literal_start:
         - "$"
         - ">"
-
+        
 extra_javascript:
   - assets/javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -80,6 +105,7 @@ extra_css:
 nav:
   - Home: index.md
   - Versions:
+    - 2025.1: ./versions/2025.1.md
     - 2024.1: ./versions/2024.1.md
   - Handout:
     - Microservices:
