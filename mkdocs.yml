@@ -93,7 +93,7 @@ plugins:
       prompt_literal_start:
         - "$"
         - ">"
-        
+
 extra_javascript:
   - assets/javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
@@ -104,79 +104,89 @@ extra_css:
 
 nav:
   - Home: index.md
+  - 2025.1: versions/2025.1.md
+  - Checkpoints:
+    - 1. CRUD Spring Boot: checkpoints/checkpoint1.md
+    - 2. Gateway Spring Cloud: checkpoints/checkpoint2.md
+    - 3. Security Spring Cloud: checkpoints/checkpoint3.md
+    - 4. DevOps: checkpoints/checkpoint4.md
+    - 5. Kubernetes: checkpoints/checkpoint5.md
+  - Concepts:
+    - Microservices: concepts/microservices.md
+    - Architectures: concepts/architectures.md
   - Versions:
-    - 2025.1: ./versions/2025.1.md
+    # - 2025.1: ./versions/2025.1.md
     - 2024.1: ./versions/2024.1.md
-  - Handout:
-    - Microservices:
-      - Roadmap: ./handout/microservices/roadmap.md
-      - Account: ./handout/microservices/account.md
-      - Auth: ./handout/microservices/auth.md
-      - Discovery: ./handout/microservices/discovery.md
-      - Gateway: ./handout/microservices/gateway.md
-    - DevOps:
-      - Observability: ./handout/devops/observability.md
-    #   - Roadmap: ./handout/devops-roadmap.md
-      - Jenkins: ./handout/devops/jenkins.md
-    #   - Docker: ./handout/devops-docker.md
-      - Kubernetes: ./handout/devops/kubernetes.md
-    - Cloud:
-      - AWS:
-        - cli: ./handout/cloud/aws/cli.md
-        - eks: ./handout/cloud/aws/eks.md
-    - Architecture: ./handout/architecture.md
-    - Business: ./handout/business.md
-  - API:
-    - Spring Boot Cloud: ./api/spring-boot-cloud.md
-    - Testing: ./api/testing.md
-    - Documentation: ./api/documentation.md
-  - Platform:
-    - Concepts: ./platform/concepts.md
-    - Microservices: ./platform/microservices.md
-    - Discovery: ./platform/discovery.md
-    - Gateway: ./platform/gateway.md
-    - Config: ./platform/config.md
-    - Load Balancing: ./platform/load-balancing.md
-    - Circuit Breaker: ./platform/circuit-breaker.md
-    - Security:
-      - Concepts: ./platform/security/concepts.md
-      - JWT: ./platform/security/jwt.md
-      - OAuth2: ./platform/security/oauth2.md
-      # - Auth Service: ./platform/security/auth-service.md
-      # - OpenID: openid.md
-      # - SSO: sso.md
-    - Communication: ./platform/communcation.md
-    - Observability:
-      - Monitoring: ./platform/observability/monitoring.md
-      - Logging: ./platform/observability/logging.md
-      - Tracing: ./platform/observability/tracing.md
-    - Messaging: 
-      - Concepts: ./platform/messaging/concepts.md
-      - Kafka: ./platform/messaging/kafka.md
-      - RabbitMQ: ./platform/messaging/rabbitmq.md
-    - Database:
-      - Flyway: ./platform/database/flyway.md
-      - Caching: ./platform/database/caching.md
-      # - MongoDB: mongodb.md
-      # - Elasticsearch: elasticsearch.md
-    - Payment: ./platform/payment.md
-  - DevOps:
-    - Concepts: ./devops/concepts.md
-    - Version Control: ./devops/version-control-system.md
-    - Docker: ./devops/docker.md
-    - Packaging: ./devops/packaging.md
-    - Release: ./devops/release.md
-    # - Nexus: nexus.md
-    # - SonarQube: sonarqube.md
-    - Kubernetes: ./devops/kubernetes.md
-  - Cloud Computing:
-    - AWS: ./cloud/aws.md
-    - GCP: ./cloud/gcp.md
-    - Azure: ./cloud/azure.md
-    - GitActions: ./cloud/gitactions.md
-    - Terraform: ./cloud/terraform.md
-  - Business:
-    - Concepts: ./business/concepts.md
+  # - Handout:
+  #   - Microservices:
+  #     - Roadmap: ./handout/microservices/roadmap.md
+  #     - Account: ./handout/microservices/account.md
+  #     - Auth: ./handout/microservices/auth.md
+  #     - Discovery: ./handout/microservices/discovery.md
+  #     - Gateway: ./handout/microservices/gateway.md
+  #   - DevOps:
+  #     - Observability: ./handout/devops/observability.md
+  #   #   - Roadmap: ./handout/devops-roadmap.md
+  #     - Jenkins: ./handout/devops/jenkins.md
+  #   #   - Docker: ./handout/devops-docker.md
+  #     - Kubernetes: ./handout/devops/kubernetes.md
+  #   - Cloud:
+  #     - AWS:
+  #       - cli: ./handout/cloud/aws/cli.md
+  #       - eks: ./handout/cloud/aws/eks.md
+  #   - Architecture: ./handout/architecture.md
+  #   - Business: ./handout/business.md
+  # - API:
+  #   - Spring Boot Cloud: ./api/spring-boot-cloud.md
+  #   - Testing: ./api/testing.md
+  #   - Documentation: ./api/documentation.md
+  # - Platform:
+  #   - Concepts: ./platform/concepts.md
+  #   - Microservices: ./platform/microservices.md
+  #   - Discovery: ./platform/discovery.md
+  #   - Gateway: ./platform/gateway.md
+  #   - Config: ./platform/config.md
+  #   - Load Balancing: ./platform/load-balancing.md
+  #   - Circuit Breaker: ./platform/circuit-breaker.md
+  #   - Security:
+  #     - Concepts: ./platform/security/concepts.md
+  #     - JWT: ./platform/security/jwt.md
+  #     - OAuth2: ./platform/security/oauth2.md
+  #     # - Auth Service: ./platform/security/auth-service.md
+  #     # - OpenID: openid.md
+  #     # - SSO: sso.md
+  #   - Communication: ./platform/communcation.md
+  #   - Observability:
+  #     - Monitoring: ./platform/observability/monitoring.md
+  #     - Logging: ./platform/observability/logging.md
+  #     - Tracing: ./platform/observability/tracing.md
+  #   - Messaging: 
+  #     - Concepts: ./platform/messaging/concepts.md
+  #     - Kafka: ./platform/messaging/kafka.md
+  #     - RabbitMQ: ./platform/messaging/rabbitmq.md
+  #   - Database:
+  #     - Flyway: ./platform/database/flyway.md
+  #     - Caching: ./platform/database/caching.md
+  #     # - MongoDB: mongodb.md
+  #     # - Elasticsearch: elasticsearch.md
+  #   - Payment: ./platform/payment.md
+  # - DevOps:
+  #   - Concepts: ./devops/concepts.md
+  #   - Version Control: ./devops/version-control-system.md
+  #   - Docker: ./devops/docker.md
+  #   - Packaging: ./devops/packaging.md
+  #   - Release: ./devops/release.md
+  #   # - Nexus: nexus.md
+  #   # - SonarQube: sonarqube.md
+  #   - Kubernetes: ./devops/kubernetes.md
+  # - Cloud Computing:
+  #   - AWS: ./cloud/aws.md
+  #   - GCP: ./cloud/gcp.md
+  #   - Azure: ./cloud/azure.md
+  #   - GitActions: ./cloud/gitactions.md
+  #   - Terraform: ./cloud/terraform.md
+  # - Business:
+  #   - Concepts: ./business/concepts.md
   - Appendix:
     - REST vs GraphQL: ./appendix/rest-vs-graphql.md
     - Versioning REST APIs: ./appendix/versioning-rest-apis.md
