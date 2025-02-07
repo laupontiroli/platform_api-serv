@@ -73,7 +73,26 @@ classDiagram
     AccountRepository ..> AccountModel
 ```
 
-<!-- ??? note "Account"
+The construction of this microservice follows the Clean Architecture approach, which promotes the total decoupling of business rules from interface layers. The diagram below illustrates the flow of data among the layers of the Account microservice:
+
+``` mermaid
+sequenceDiagram
+    title Clean architecture's approach    
+    Actor User
+    User ->>+ Controller: 
+    Controller ->>+ Service: parser
+    Service ->>+ Repository: parser
+    Repository ->>+ Database: 
+    Database ->>- Repository: 
+    Repository ->>- Service: parser
+    Service ->>- Controller: parser
+    Controller ->>- User: 
+```
+
+
+
+<!-- 
+???+ note "Account"
 
 
     ``` tree

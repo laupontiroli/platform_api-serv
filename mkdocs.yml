@@ -18,7 +18,7 @@ theme:
     - media: "(prefers-color-scheme)"
       primary: grey
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/toggle-switch
         name: Switch to light mode
 
     # Palette toggle for light mode
