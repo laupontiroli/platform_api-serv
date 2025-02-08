@@ -91,6 +91,32 @@ sequenceDiagram
     Controller ->>- Request: 
 ```
 
+Previously to build the Account microservice, it is necessary to prepare the environment by installing the database to persist the data. For that, we will use a Docker Compose file to create a PostgreSQL container, as well as, a cluster to isolate the microservices from external access, creating a secure environment - trusted layer. A Docker Compose file is a YAML file that defines how Docker containers should behave in production. The file contains the configuration for the database, the microservices, and the network configuration.
+
+
+``` mermaid
+flowchart LR
+    subgraph microservices["Microservices Cluster"]
+        direction TB
+        account["Account Service"]
+        db@{ shape: cyl, label: "Database" }
+    end
+    request@{ shape: circle, label: "Request" } --> account
+    account --> db
+```
+
+???+ note "Docker Compose"
+
+    ``` tree
+    api
+        account
+        account-service
+        compose.yaml
+    ```
+
+    ``` yaml { .copy .select .yaml title="compose.yaml" }
+    --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/compose.yaml"
+    ```
 
 
 <!-- 
@@ -162,7 +188,7 @@ sequenceDiagram
         Dockerfile
     ```
 -->
-??? note "Account-Service"
+???+ note "Account-Service"
 
     ``` tree
     account-service
@@ -178,29 +204,31 @@ sequenceDiagram
         pom.xml
     ```
 
-    === "pom"
+    ??? info "Source"
 
-        ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/pom.xml"
-        ```
+        === "pom"
 
-    === "application"
+            ``` { .yaml title='pom.xml' .copy .select linenums="1" }
+            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/pom.xml"
+            ```
 
-        ``` { .yaml title='application.yaml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/application.yaml"
-        ```
+        === "application"
 
-    === "AccountApplication"
+            ``` { .yaml title='application.yaml' .copy .select linenums="1" }
+            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/application.yaml"
+            ```
 
-        ``` { .java title='AccountApplication.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
-        ```
+        === "AccountApplication"
 
-    === "AccountResource"
+            ``` { .java title='AccountApplication.java' .copy .select linenums='1' }
+            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
+            ```
 
-        ``` { .java title='AccountResource.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
-        ```
+        === "AccountResource"
+
+            ``` { .java title='AccountResource.java' .copy .select linenums='1' }
+            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
+            ```
 
 
     <!-- termynal -->
