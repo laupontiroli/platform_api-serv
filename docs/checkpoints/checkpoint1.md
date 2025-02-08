@@ -73,20 +73,22 @@ classDiagram
     AccountRepository ..> AccountModel
 ```
 
-The construction of this microservice follows the Clean Architecture approach, which promotes the total decoupling of business rules from interface layers. The diagram below illustrates the flow of data among the layers of the Account microservice:
+This approach allows the separation of concerns and the organization of the codebase into different modules, making it easier to maintain and scale the application. Also, it creates a facility to reuse the microservice by other microservices in the future - builts in Java.
+
+The construction of the Account microservice follows the Clean Architecture approach, which promotes the total decoupling of business rules from interface layers. The diagram below illustrates the flow of data among the layers of the Account microservice:
 
 ``` mermaid
 sequenceDiagram
     title Clean architecture's approach    
-    Actor User
-    User ->>+ Controller: 
+    Actor Request
+    Request ->>+ Controller: 
     Controller ->>+ Service: parser
     Service ->>+ Repository: parser
     Repository ->>+ Database: 
     Database ->>- Repository: 
     Repository ->>- Service: parser
     Service ->>- Controller: parser
-    Controller ->>- User: 
+    Controller ->>- Request: 
 ```
 
 
@@ -138,7 +140,6 @@ sequenceDiagram
     > mvn clean install
     ```
 
-
 ??? note "Account-Service"
 
     ``` tree
@@ -160,11 +161,27 @@ sequenceDiagram
         pom.xml
         Dockerfile
     ```
+-->
+??? note "Account-Service"
+
+    ``` tree
+    account-service
+        src
+            main
+                java
+                    store
+                        account
+                            AccountApplication.java
+                            AccountResource.java
+                resources
+                    application.yaml
+        pom.xml
+    ```
 
     === "pom"
 
         ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account-service/pom.xml"
+        --8<-- "https://raw.githubusercontent.com/insper/platform/refs/heads/main/api/account-service/pom.xml"
         ```
 
     === "application"
