@@ -105,20 +105,23 @@ flowchart LR
     account --> db
 ```
 
-???+ example "Docker Compose"
+## Docker Compose
 
-    ``` tree
-    api
-        account
-        account-service
-        compose.yaml
-    ```
+``` tree
+api
+    account
+    account-service
+    .env
+    compose.yaml
+```
 
-    ``` { .yaml .copy .select title='compose.yaml' }
+=== "compose.yaml"
+    ``` { .yaml .copy .select linenums="1" }
     --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/compose.yaml"
     ```
 
-    ``` { .env .copy .select title='.env' }
+=== ".env"
+    ``` { .sh .copy .select linenums="1" }
     --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/.env"
     ```
 
@@ -193,55 +196,56 @@ flowchart LR
             Dockerfile
     ```
 -->
-???+ note "Account-Service"
 
-    ``` tree
-    api
-        account-service
-            src
-                main
-                    java
-                        store
-                            account
-                                AccountApplication.java
-                                AccountResource.java
-                    resources
-                        application.yaml
-            pom.xml
-    ```
+## Account-Service
 
-    ??? info "Source"
+``` tree
+api
+    account-service
+        src
+            main
+                java
+                    store
+                        account
+                            AccountApplication.java
+                            AccountResource.java
+                resources
+                    application.yaml
+        pom.xml
+```
 
-        === "pom"
+??? info "Source"
 
-            ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/pom.xml"
-            ```
+    === "pom.xml"
 
-        === "application"
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/pom.xml"
+        ```
 
-            ``` { .yaml title='application.yaml' .copy .select linenums="1" }
-            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/application.yaml"
-            ```
+    === "application.yaml"
 
-        === "AccountApplication"
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/application.yaml"
+        ```
 
-            ``` { .java title='AccountApplication.java' .copy .select linenums='1' }
-            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
-            ```
+    === "AccountApplication.java"
 
-        === "AccountResource"
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
+        ```
 
-            ``` { .java title='AccountResource.java' .copy .select linenums='1' }
-            --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
-            ```
+    === "AccountResource.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
+        ```
 
 
-    <!-- termynal -->
+<!-- termynal -->
 
-    ``` { bash }
-    > mvn clean package spring-boot:run
-    ```
+``` { bash }
+> mvn clean package spring-boot:run
+```
 <!--
 ## API
 
