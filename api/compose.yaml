@@ -5,8 +5,8 @@ services:
   db:
     image: postgres:latest
     environment:
-      POSTGRES_DB: store
-      POSTGRES_USER: store
-      POSTGRES_PASSWORD: store
+      POSTGRES_DB: ${POSTGRES_DB:-store}
+      POSTGRES_USER: ${POSTGRES_DB:-store}
+      POSTGRES_PASSWORD: ${POSTGRES_DB:-store}
     ports:
       - 5432:5432

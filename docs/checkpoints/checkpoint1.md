@@ -105,7 +105,7 @@ flowchart LR
     account --> db
 ```
 
-???+ note "Docker Compose"
+???+ example "Docker Compose"
 
     ``` tree
     api
@@ -114,8 +114,12 @@ flowchart LR
         compose.yaml
     ```
 
-    ``` yaml { .copy .select .yaml title="compose.yaml" }
+    ``` { .yaml .copy .select title='compose.yaml' }
     --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/compose.yaml"
+    ```
+
+    ``` { .env .copy .select title='.env' }
+    --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/.env"
     ```
 
 
@@ -169,39 +173,41 @@ flowchart LR
 ??? note "Account-Service"
 
     ``` tree
-    account-service
-        src
-            main
-                java
-                    store
-                        account
-                            AccountApplication.java
-                            AccountResource.java
-                            AccountService.java
-                            AccountRepository.java
-                            Account.java
-                            AccountModel.java
-                            AccountParser.java
-                resources
-                    application.yaml
-        pom.xml
-        Dockerfile
+    api
+        account-service
+            src
+                main
+                    java
+                        store
+                            account
+                                AccountApplication.java
+                                AccountResource.java
+                                AccountService.java
+                                AccountRepository.java
+                                Account.java
+                                AccountModel.java
+                                AccountParser.java
+                    resources
+                        application.yaml
+            pom.xml
+            Dockerfile
     ```
 -->
 ???+ note "Account-Service"
 
     ``` tree
-    account-service
-        src
-            main
-                java
-                    store
-                        account
-                            AccountApplication.java
-                            AccountResource.java
-                resources
-                    application.yaml
-        pom.xml
+    api
+        account-service
+            src
+                main
+                    java
+                        store
+                            account
+                                AccountApplication.java
+                                AccountResource.java
+                    resources
+                        application.yaml
+            pom.xml
     ```
 
     ??? info "Source"
