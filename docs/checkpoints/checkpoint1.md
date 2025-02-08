@@ -125,6 +125,16 @@ api
     --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/.env"
     ```
 
+<!-- termynal -->
+
+``` { bash }
+> docker compose up -d --build
+
+[+] Running 2/2
+ ✔ Network store_default  Created            0.1s 
+ ✔ Container store-db-1   Started            0.2s 
+```
+
 
 <!-- 
 ???+ note "Account"
