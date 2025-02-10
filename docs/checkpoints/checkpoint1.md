@@ -97,7 +97,7 @@ Previously to build the Account microservice, it is necessary to prepare the env
 ``` mermaid
 architecture-beta
 
-    service internet(internet)[Request]
+    service internet(internet)[request]
 
     group api(cloud)[Docker Compose]
 
