@@ -101,8 +101,8 @@ architecture-beta
 
     group api(cloud)[Docker Compose]
 
-    service db(database)[Database] in api
-    service server(server)[Microservice] in api
+    service db(database)[db] in api
+    service server(server)[account] in api
 
     internet:R --> L:server
 
