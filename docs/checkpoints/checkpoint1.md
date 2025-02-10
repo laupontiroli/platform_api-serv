@@ -95,14 +95,18 @@ Previously to build the Account microservice, it is necessary to prepare the env
 
 
 ``` mermaid
-flowchart LR
-    subgraph microservices["Microservices Cluster"]
-        direction TB
-        account["Account Service"]
-        db@{ shape: cyl, label: "Database" }
-    end
-    request@{ shape: circle, label: "Request" } --> account
-    account --> db
+architecture-beta
+
+    service internet(internet)[Request]
+
+    group api(cloud)[Docker Compose]
+
+    service db(database)[Database] in api
+    service server(server)[Microservice] in api
+
+    internet:R --> L:server
+
+    db:L -- R:server
 ```
 
 ## Docker Compose
@@ -137,10 +141,11 @@ api
 
 
 <!-- 
-???+ note "Account"
+## Account
 
 
-    ``` tree
+``` tree
+api
     account
         src
             main
@@ -151,30 +156,32 @@ api
                             AccountIn.java
                             AccountOut.java
         pom.xml
-    ```
+```
 
-    === "pom"
+??? info "Source"
 
-        ``` { .yaml title='pom.xml' .copy .select linenums="1" }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/pom.xml"
+    === "pom.xml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/pom.xml"
         ```
 
     === "AccountController"
 
         ``` { .java title='AccountController.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountController.java"
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountController.java"
         ```
 
     === "AccountIn"
 
         ``` { .java title='AccountIn.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountIn.java"
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountIn.java"
         ```
 
     === "AccountOut"
 
         ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/hsandmann/spring/refs/heads/main/api/account/src/main/java/store/account/AccountOut.java"
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountOut.java"
         ```
 
     <!-- termynal -->
@@ -182,7 +189,8 @@ api
     ``` { bash }
     > mvn clean install
     ```
-
+-->
+<!--
 ??? note "Account-Service"
 
     ``` tree
