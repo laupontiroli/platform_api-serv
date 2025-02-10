@@ -102,11 +102,11 @@ architecture-beta
     group api(cloud)[Docker Compose]
 
     service db(database)[db] in api
-    service server(server)[account] in api
+    service account(server)[account] in api
 
-    internet:R --> L:server
+    internet:R --> L:account
 
-    db:L -- R:server
+    db:L -- R:account
 ```
 
 ## Docker Compose
