@@ -230,6 +230,7 @@ api
                 resources
                     application.yaml
         pom.xml
+        Dockerfile
 ```
 
 ??? info "Source"
@@ -258,6 +259,11 @@ api
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
         ```
 
+    === "Dockerfile"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/Dockerfile"
+        ```
 
 <!-- termynal -->
 
