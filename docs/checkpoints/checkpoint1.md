@@ -261,7 +261,7 @@ api
 
     === "Dockerfile"
 
-        ``` { .yaml .copy .select linenums="1" }
+        ``` { .dockerfile .copy .select linenums="1" }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/Dockerfile"
         ```
 
