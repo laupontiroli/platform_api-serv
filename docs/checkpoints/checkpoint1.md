@@ -162,25 +162,25 @@ api
     === "pom.xml"
 
         ``` { .yaml .copy .select linenums="1" }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/pom.xml"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/pom.xml"
         ```
 
     === "AccountController"
 
         ``` { .java title='AccountController.java' .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountController.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountController.java"
         ```
 
     === "AccountIn"
 
         ``` { .java title='AccountIn.java' .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountIn.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountIn.java"
         ```
 
     === "AccountOut"
 
         ``` { .java title='AccountOut.java' .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountOut.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account/src/main/java/store/account/AccountOut.java"
         ```
 
     <!-- termynal -->
