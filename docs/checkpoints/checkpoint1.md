@@ -140,7 +140,6 @@ api
 ```
 
 
-<!-- 
 ## Account
 
 
@@ -189,7 +188,7 @@ api
     ``` { bash }
     > mvn clean install
     ```
--->
+
 <!--
 ??? note "Account-Service"
 
@@ -227,6 +226,9 @@ api
                         account
                             AccountApplication.java
                             AccountResource.java
+                            AccountService.java
+                            Account.java
+                            AccountParser.java
                 resources
                     application.yaml
         pom.xml
@@ -257,6 +259,18 @@ api
 
         ``` { .java .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountResource.java"
+        ```
+
+    === "AccountService.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountService.java"
+        ```
+
+    === "AccountParser.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountParser.java"
         ```
 
     === "Dockerfile"
