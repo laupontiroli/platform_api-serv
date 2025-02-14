@@ -267,6 +267,12 @@ api
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountService.java"
         ```
 
+    === "Account.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/Account.java"
+        ```
+
     === "AccountParser.java"
 
         ``` { .java .copy .select linenums='1' }
