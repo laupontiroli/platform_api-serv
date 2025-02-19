@@ -82,12 +82,12 @@ sequenceDiagram
     title Clean architecture's approach    
     Actor Request
     Request ->>+ Controller: 
-    Controller ->>+ Service: parser
-    Service ->>+ Repository: parser
+    Controller ->>+ Service: parser (AccountIn -> Account)
+    Service ->>+ Repository: parser (Account -> AccountModel)
     Repository ->>+ Database: 
     Database ->>- Repository: 
-    Repository ->>- Service: parser
-    Service ->>- Controller: parser
+    Repository ->>- Service: parser (Account <- AccountModel)
+    Service ->>- Controller: parser (AccountOut <- Account)
     Controller ->>- Request: 
 ```
 
@@ -224,11 +224,13 @@ api
                 java
                     store
                         account
+                            Account.java
                             AccountApplication.java
+                            AccountModel.java
+                            AccountParser.java
+                            AccountRepository.java
                             AccountResource.java
                             AccountService.java
-                            Account.java
-                            AccountParser.java
                 resources
                     application.yaml
         pom.xml
@@ -255,6 +257,24 @@ api
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountApplication.java"
         ```
 
+    === "AccountModel.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountModel.java"
+        ```
+
+    === "AccountParser.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountParser.java"
+        ```
+
+    === "AccountRepository.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountRepository.java"
+        ```
+
     === "AccountResource.java"
 
         ``` { .java .copy .select linenums='1' }
@@ -271,12 +291,6 @@ api
 
         ``` { .java .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/Account.java"
-        ```
-
-    === "AccountParser.java"
-
-        ``` { .java .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountParser.java"
         ```
 
     === "Dockerfile"
