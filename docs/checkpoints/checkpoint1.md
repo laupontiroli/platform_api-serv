@@ -251,6 +251,12 @@ api
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/application.yaml"
         ```
 
+    === "Account.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/Account.java"
+        ```
+
     === "AccountApplication.java"
 
         ``` { .java .copy .select linenums='1' }
@@ -285,12 +291,6 @@ api
 
         ``` { .java .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountService.java"
-        ```
-
-    === "Account.java"
-
-        ``` { .java .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/Account.java"
         ```
 
     === "Dockerfile"
