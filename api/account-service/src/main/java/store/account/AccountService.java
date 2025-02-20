@@ -31,6 +31,10 @@ public class AccountService {
             .toList();
     }
 
+    /*
+     * A reference to implement a nice hash's password
+     * https://github.com/ByteByteGoHq/system-design-101/tree/main?tab=readme-ov-file#how-to-store-passwords-safely-in-the-database-and-how-to-validate-a-password
+     */
     private String calcHash(String value) {
         try {
             MessageDigest digester = MessageDigest.getInstance("SHA-256");

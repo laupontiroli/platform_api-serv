@@ -30,7 +30,6 @@ public class AccountModel {
     private String email;
 
     @Column(name = "tx_sha256")
-    // https://github.com/ByteByteGoHq/system-design-101/tree/main?tab=readme-ov-file#how-to-store-passwords-safely-in-the-database-and-how-to-validate-a-password
     private String sha256;
 
     @Column(name = "dt_birthdate")
