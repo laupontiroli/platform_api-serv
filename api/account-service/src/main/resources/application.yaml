@@ -6,9 +6,9 @@ spring:
     name: account
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/store
-    username: store
-    password: store
+    url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT:5432}/store
+    username: ${DATABASE_USER:store}
+    password: ${DATABASE_PASSWORD:store}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -16,3 +16,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: account
+
+  flyway:
+    schemas: account
+    baseline-on-migrate: true

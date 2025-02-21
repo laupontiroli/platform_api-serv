@@ -19,9 +19,18 @@ public class AccountService {
 
     public Account create(Account account) {
         final String pass = account.password().trim();
+        if (pass.length() < 8) {
+            throw new RuntimeException("Password too short!");
+        }
         account.sha256(calcHash(pass));
         account.creation(new Date());
         return accountRepository.save(new AccountModel(account)).to();
+    }
+
+    public Account findByEmailAndPassword(String email, String password) {
+        final String sha256 = calcHash(password);
+        AccountModel m  = accountRepository.findByEmailAndSha256(email, sha256);
+        return m == null ? null : m.to();
     }
 
     public List<Account> findAll() {
