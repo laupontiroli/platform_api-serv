@@ -233,6 +233,10 @@ api
                             AccountService.java
                 resources
                     application.yaml
+                    db
+                        migration
+                            V2025.02.21.001__create_schema_account.sql
+                            V2025.02.21.002__create_table_account.sql
         pom.xml
         Dockerfile
 ```
@@ -291,6 +295,18 @@ api
 
         ``` { .java .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/java/store/account/AccountService.java"
+        ```
+
+    === "V2025.02.21.001__create_schema_account.sql"
+
+        ``` { .sql .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/db/migration/V2025.02.21.001__create_schema_account.sql"
+        ```
+
+    === "V2025.02.21.002__create_table_account.sql"
+
+        ``` { .sql .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/account-service/src/main/resources/db/migration/V2025.02.21.002__create_table_account.sql"
         ```
 
     === "Dockerfile"
