@@ -5,7 +5,6 @@ The main functionality of Gateway Microservice is to route the incoming requests
 flowchart LR
   subgraph api
     direction TB
-    loadbalance --> gateway
     gateway --> account
     gateway --> auth
     gateway --> others
@@ -13,7 +12,7 @@ flowchart LR
     others --> db
     auth --> account
   end
-  internet -->|request| loadbalance
+  internet -->|request| gateway
 ```
 
 The key functionalities of Gateway Microservice are:
