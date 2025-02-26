@@ -32,6 +32,9 @@ api
                     store
                         gateway
                             GatewayApplication.java
+                            GatewayResource.java
+                            security
+                                CorsFilter.java
                 resources
                     application.yaml
         pom.xml
@@ -43,23 +46,35 @@ api
     === "pom.xml"
 
         ``` { .yaml .copy .select linenums="1" }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/pom.xml"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/pom.xml"
         ```
 
     === "application.yaml"
 
         ``` { .yaml .copy .select linenums="1" }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/resources/application.yaml"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/resources/application.yaml"
         ```
 
     === "GatewayApplication.java"
 
         ``` { .java .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayApplication.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayApplication.java"
+        ```
+
+    === "GatewayResource.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayResource.java"
+        ```
+
+    === "CorsFilter.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/CorsFilter.java"
         ```
 
     === "Dockerfile"
 
         ``` { .dockerfile .copy .select linenums="1" }
-        -  -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/Dockerfile"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/Dockerfile"
         ```
