@@ -62,5 +62,5 @@ api
     === "Dockerfile"
 
         ``` { .dockerfile .copy .select linenums="1" }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/Dockerfile"
+        -  -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/Dockerfile"
         ```
