@@ -9,10 +9,10 @@ spring:
     gateway:
       routes:
 
-        # - id: insper
-        #   uri: https://www.insper.edu.br
+        # - id: google
+        #   uri: https://www.google.com
         #   predicates:
-        #     - Path=/insper/**
+        #     - Path=/google/**
 
         - id: account
           uri: http://account:8080
