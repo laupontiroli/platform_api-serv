@@ -22,6 +22,11 @@ services:
       DATABASE_USER: ${POSTGRES_USER:-store}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-store}
 
+  auth:
+    build:
+      context: ./auth-service
+      dockerfile: Dockerfile
+
   gateway:
     build:
       context: ./gateway-service

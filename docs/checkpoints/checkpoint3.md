@@ -27,12 +27,12 @@ classDiagram
     }
     namespace auth-service {
         class AuthResource {
-            +register(RegisterIn RegisterIn): TokenOut
-            +login(LoginIn loginIn): TokenOut
+            +register(RegisterIn RegisterIn) TokenOut
+            +login(LoginIn loginIn) TokenOut
         }
         class AuthService {
-            +register(Register): Regiter
-            +login(LoginIn loginIn): String
+            +register(Register) Regiter
+            +login(LoginIn loginIn) String
         }
         class Register {
             -String id
@@ -50,3 +50,4 @@ classDiagram
     AuthResource *-- AuthService
     AuthService ..> Register
 ```
+
