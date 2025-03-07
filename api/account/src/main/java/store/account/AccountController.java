@@ -18,5 +18,10 @@ public interface AccountController {
 
     @GetMapping("/account")
     public ResponseEntity<List<AccountOut>> findAll();
+
+    @PostMapping("/account/login")
+    public ResponseEntity<AccountOut> findByEmailAndPassword(
+        @RequestBody AccountIn accountIn
+    );
     
 }

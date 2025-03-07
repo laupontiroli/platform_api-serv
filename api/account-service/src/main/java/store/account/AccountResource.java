@@ -24,5 +24,16 @@ public class AccountResource implements AccountController {
             .ok()
             .body(accountService.findAll().stream().map(AccountParser::to).toList());
     }
+
+    @Override
+    public ResponseEntity<AccountOut> findByEmailAndPassword(AccountIn accountIn) {
+        Account account = accountService.findByEmailAndPassword(
+            accountIn.email(),
+            accountIn.password()
+        );
+        return ResponseEntity
+            .ok()
+            .body(AccountParser.to(account));
+    }
     
 }

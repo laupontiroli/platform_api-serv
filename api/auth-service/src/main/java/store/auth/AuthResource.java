@@ -18,8 +18,8 @@ public class AuthResource implements AuthController {
 
     @Override
     public ResponseEntity<TokenOut> login(LoginIn loginIn) {
-        // TODO Auto-generated method stub
-        return null;
+        String token = authService.login(loginIn.email(), loginIn.password());
+        return ResponseEntity.ok().body(AuthParser.to(token));
     }
 
 }

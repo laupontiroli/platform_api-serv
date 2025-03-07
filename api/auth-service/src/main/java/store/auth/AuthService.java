@@ -1,5 +1,7 @@
 package store.auth;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -14,24 +16,44 @@ public class AuthService {
     @Autowired
     private AccountController accountController;
 
+    @Autowired
+    private JwtService jwtService;
+
     public String register(Register register) {
         AccountIn accountIn = AccountIn.builder()
             .email(register.email())
             .name(register.name())
             .password(register.password())
             .build();
+
         // registrar no account
         // aqui estou substituindo o RestTemplate
         ResponseEntity<AccountOut> response = accountController.create(accountIn);
         AccountOut accountOut = response.getBody();
 
         // gerar o token
-        String token = accountOut.id();
-        return token;
+        // regra de geracao de token
+        return generateToken(accountOut.id());
     }
 
     public String login(String email, String password) {
-        return null;
+
+        ResponseEntity<AccountOut> response = accountController.findByEmailAndPassword(
+            AccountIn.builder()
+                .email(email)
+                .password(password)
+                .build()
+        );
+        AccountOut accountOut = response.getBody();
+
+        return generateToken(accountOut.id());
+    }
+
+    private String generateToken(String id) {
+        Date notBefore = new Date();
+        Date expiration = new Date(notBefore.getTime() + 1000l * 60 * 60 * 24);
+        String token = jwtService.create(id, notBefore, expiration);
+        return token;
     }
 
 }
