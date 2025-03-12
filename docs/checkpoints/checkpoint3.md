@@ -225,7 +225,7 @@ api
                             GatewayApplication.java
                             GatewayResource.java
                             security
-                                AuthenticationFilter.java
+                                AuthorizationFilter.java
                                 CorsFilter.java
                                 RouterValidator.java
                 resources
@@ -260,10 +260,10 @@ api
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayResource.java"
         ```
 
-    === "AuthenticationFilter.java"
+    === "AuthorizationFilter.java"
 
         ``` { .java .copy .select linenums='1' }
-        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/AuthenticationFilter.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/AuthorizationFilter.java"
         ```
 
     === "CorsFilter.java"
