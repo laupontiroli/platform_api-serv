@@ -211,6 +211,82 @@ sequenceDiagram
   AuthenticationFilter->>Gateway: follow the flux
 ```
 
+
+## Gateway-Service
+
+``` tree
+api
+    gateway-service
+        src
+            main
+                java
+                    store
+                        gateway
+                            GatewayApplication.java
+                            GatewayResource.java
+                            security
+                                AuthenticationFilter.java
+                                CorsFilter.java
+                                RouterValidator.java
+                resources
+                    application.yaml
+        pom.xml
+        Dockerfile
+```
+
+??? info "Source"
+
+    === "pom.xml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/pom.xml"
+        ```
+
+    === "application.yaml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/resources/application.yaml"
+        ```
+
+    === "GatewayApplication.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayApplication.java"
+        ```
+
+    === "GatewayResource.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/GatewayResource.java"
+        ```
+
+    === "AuthenticationFilter.java"
+
+        ``` { .java .copy .select linenums='1' }
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/AuthenticationFilter.java"
+        ```
+
+    === "CorsFilter.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/CorsFilter.java"
+        ```
+
+    === "RouterValidator.java"
+
+        ``` { .java .copy .select linenums='1' }
+        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/RouterValidator.java"
+        ```
+
+    === "Dockerfile"
+
+        ``` { .dockerfile .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/Dockerfile"
+        ```
+
+
+
+
 ## JWT - JSON Web Token
 
 JWT stands for JSON Web Token. It is a compact, URL-safe means of representing claims between two parties. JWTs are commonly used to secure the transmission of information between parties in a web environment, typically for authentication and information exchange. The JWT specification is defined by RFC 7519[^1] and it is a decentralized approach for security (which can support [horizontal scalability](../concepts.md#horizontal-scalability-scale-out)).

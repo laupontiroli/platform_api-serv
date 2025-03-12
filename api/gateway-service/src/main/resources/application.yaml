@@ -23,3 +23,7 @@ spring:
           uri: http://auth:8080
           predicates:
             - Path=/auth/**
+
+logging:
+  level:
+    store: ${LOGGING_LEVEL_STORE:debug}
