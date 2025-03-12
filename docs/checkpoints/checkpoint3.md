@@ -263,7 +263,7 @@ api
     === "AuthenticationFilter.java"
 
         ``` { .java .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/AuthenticationFilter.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/AuthenticationFilter.java"
         ```
 
     === "CorsFilter.java"
@@ -275,7 +275,7 @@ api
     === "RouterValidator.java"
 
         ``` { .java .copy .select linenums='1' }
-        - -8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/RouterValidator.java"
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/RouterValidator.java"
         ```
 
     === "Dockerfile"
