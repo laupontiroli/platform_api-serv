@@ -31,5 +31,7 @@ services:
     build:
       context: ./gateway-service
       dockerfile: Dockerfile
+    environment:
+      - LOGGING_LEVEL_STORE=${LOGGING_LEVEL_STORE:-debug}
     ports:
       - 8080:8080
