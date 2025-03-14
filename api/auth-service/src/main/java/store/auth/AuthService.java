@@ -56,4 +56,10 @@ public class AuthService {
         return token;
     }
 
+    public SolveOut solve(String token) {
+        return SolveOut.builder()
+            .idAccount(jwtService.getId(token))
+            .build();
+    }
+
 }

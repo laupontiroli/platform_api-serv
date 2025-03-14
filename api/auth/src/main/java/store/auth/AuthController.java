@@ -15,5 +15,10 @@ public interface AuthController {
     public ResponseEntity<TokenOut> login(
         @RequestBody LoginIn loginIn
     );
+
+    @PostMapping("auth/solve")
+    public ResponseEntity<SolveOut> solve(
+        @RequestBody TokenOut token
+    );
     
 }

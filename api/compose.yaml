@@ -26,6 +26,8 @@ services:
     build:
       context: ./auth-service
       dockerfile: Dockerfile
+    environment:
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-yrBBgYlvJQeslzFlgX9MFZccToI2fjRFqualquercoisa}
 
   gateway:
     build:

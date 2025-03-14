@@ -188,27 +188,27 @@ sequenceDiagram
   autonumber
   actor User
   User->>Gateway: route(ServerHttpRequest)
-  Gateway->>+AuthenticationFilter: filter(ServerWebExchange, GatewayFilterChain)
-  AuthenticationFilter->>RouteValidator: isSecured.test(ServerHttpRequest)
-  RouteValidator-->>AuthenticationFilter: True | False
+  Gateway->>+AuthorizationFilter: filter(ServerWebExchange, GatewayFilterChain)
+  AuthorizationFilter->>RouteValidator: isSecured.test(ServerHttpRequest)
+  RouteValidator-->>AuthorizationFilter: True | False
   critical notSecured
-    AuthenticationFilter->>Gateway: follow the flux
+    AuthorizationFilter->>Gateway: follow the flux
   end
-  AuthenticationFilter->>AuthenticationFilter: isAuthMissing(ServerHttpRequest)
+  AuthorizationFilter->>AuthorizationFilter: isAuthMissing(ServerHttpRequest)
   critical isAuthMissing
-    AuthenticationFilter->>User: unauthorized message
+    AuthorizationFilter->>User: unauthorized message
   end
-  AuthenticationFilter->>AuthenticationFilter: validateAuthorizationHeader()
+  AuthorizationFilter->>AuthorizationFilter: validateAuthorizationHeader()
   critical isInvalidAuthorizationHeader
-    AuthenticationFilter->>User: unauthorized message
+    AuthorizationFilter->>User: unauthorized message
   end
-  AuthenticationFilter->>Auth: solve(Token)
+  AuthorizationFilter->>Auth: solve(Token)
   critical isInvalidToken
     Auth->>User: unauthorized message
   end
-  Auth->>AuthenticationFilter: returns token claims
-  AuthenticationFilter->>AuthenticationFilter: updateRequestHeader(ServerHttpRequest)
-  AuthenticationFilter->>Gateway: follow the flux
+  Auth->>AuthorizationFilter: returns SolveOut
+  AuthorizationFilter->>AuthorizationFilter: updateRequestHeader(ServerHttpRequest)
+  AuthorizationFilter->>Gateway: follow the flux
 ```
 
 
@@ -228,6 +228,8 @@ api
                                 AuthorizationFilter.java
                                 CorsFilter.java
                                 RouterValidator.java
+                                SolveOut.java
+                                TokenOut.java
                 resources
                     application.yaml
         pom.xml
@@ -276,6 +278,18 @@ api
 
         ``` { .java .copy .select linenums='1' }
         --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/RouterValidator.java"
+        ```
+
+    === "SolveOut.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/SolveOut.java"
+        ```
+
+    === "TokenOut.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/gateway-service/src/main/java/store/gateway/security/TokenOut.java"
         ```
 
     === "Dockerfile"

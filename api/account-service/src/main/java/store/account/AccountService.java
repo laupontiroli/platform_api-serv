@@ -17,6 +17,10 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
+    public Account findById(String id) {
+        return accountRepository.findById(id).get().to();
+    }
+
     public Account create(Account account) {
         final String pass = account.password().trim();
         if (pass.length() < 8) {

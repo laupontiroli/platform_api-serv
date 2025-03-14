@@ -35,5 +35,12 @@ public class AccountResource implements AccountController {
             .ok()
             .body(AccountParser.to(account));
     }
+
+    @Override
+    public ResponseEntity<AccountOut> whoami(String idAccount) {
+        return ResponseEntity
+            .ok()
+            .body(AccountParser.to(accountService.findById(idAccount)));
+    }
     
 }

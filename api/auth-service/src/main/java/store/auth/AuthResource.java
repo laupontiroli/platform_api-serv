@@ -22,4 +22,11 @@ public class AuthResource implements AuthController {
         return ResponseEntity.ok().body(AuthParser.to(token));
     }
 
+    @Override
+    public ResponseEntity<SolveOut> solve(TokenOut token) {
+        return ResponseEntity.ok().body(
+            authService.solve(token.token())
+        );
+    }
+
 }

@@ -67,27 +67,40 @@ public class AuthorizationFilter implements GlobalFilter  {
     // este metodo eh responsavel por enviar o token ao Auth Microservice
     // a fim de interpretar o token, a chamada eh feita via Rest.
     private Mono<Void> requestAuthTokenSolve(ServerWebExchange exchange, GatewayFilterChain chain, String jwt) {
-        // return webClient
-        //     .defaultHeader(
-        //         HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
-        //     )
-        //     .build()
-        //     .post()
-        //     .uri(AUTH_SERVICE_TOKEN_SOLVE)
-        //     .bodyValue(in)
-        //     .retrieve()
-        //     .toEntity(ValidationOut.class)
-        //     .flatMap(response -> {
-        //         if (response != null && response.hasBody() && response.getBody() != null) {
-        //             final ValidationOut out = response.getBody();
-        //             ServerWebExchange modifiedExchange = this.updateRequest(exchange, out);
-        //             return chain.filter(modifiedExchange);
-        //         } else {
-        //             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid token");
-        //         }
-        //     });
-        // TODO: para sexta
-        return chain.filter(exchange);
+        logger.debug("solving jwt: " + jwt);
+        return webClient
+            .defaultHeader(
+                HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE
+            )
+            .build()
+            .post()
+            .uri(AUTH_SERVICE_TOKEN_SOLVE)
+            .bodyValue(TokenOut.builder().token(jwt).build())
+            .retrieve()
+            .toEntity(SolveOut.class)
+            .flatMap(response -> {
+                if (response != null && response.hasBody() && response.getBody() != null) {
+                    final SolveOut out = response.getBody();
+                    logger.debug("id account" + out.idAccount());
+                    ServerWebExchange modifiedExchange = this.updateRequest(exchange, out);
+                    return chain.filter(modifiedExchange);
+                } else {
+                    throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid token");
+                }
+            });
+    }
+
+    private ServerWebExchange updateRequest(ServerWebExchange exchange, SolveOut out) {
+        logger.debug("original headers: " + exchange.getRequest().getHeaders().toString());
+        ServerWebExchange modified = exchange.mutate()
+            .request(
+                exchange.getRequest()
+                    .mutate()
+                    .header("id-account", out.idAccount())
+                    .build()
+            ).build();
+        logger.debug("updated headers: " + modified.getRequest().getHeaders().toString());
+        return modified;
     }
 
 }
