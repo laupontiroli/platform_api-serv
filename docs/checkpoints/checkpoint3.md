@@ -24,6 +24,9 @@ classDiagram
         class TokenOut {
             -String token
         }
+        class SolveOut {
+            -String idAccount
+        }
     }
     namespace auth-service {
         class AuthResource {
@@ -50,6 +53,145 @@ classDiagram
     AuthResource *-- AuthService
     AuthService ..> Register
 ```
+
+## Auth
+
+``` tree
+api
+    auth
+        src
+            main
+                java
+                    store
+                        auth
+                            AuthController.java
+                            LoginIn.java
+                            RegisterIn.java
+                            SolveOut.java
+                            TokenOut.java
+        pom.xml
+```
+
+??? info "Source"
+
+    === "pom.xml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/pom.xml"
+        ```
+
+    === "AuthController.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/src/main/java/store/auth/AuthController.java"
+        ```
+
+    === "LoginIn.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/src/main/java/store/auth/LoginIn.java"
+        ```
+
+    === "RegisterIn.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/src/main/java/store/auth/RegisterIn.java"
+        ```
+
+    === "SolveOut.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/src/main/java/store/auth/SolveOut.java"
+        ```
+
+    === "TokenOut.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth/src/main/java/store/auth/TokenOut.java"
+        ```
+
+
+
+
+
+## Auth-Service
+
+``` tree
+api
+    auth-service
+        src
+            main
+                java
+                    store
+                        auth
+                            AuthApplication.java
+                            AuthParser.java
+                            AuthResource.java
+                            AuthService.java
+                            JwtService.java
+                            Register.java
+            resources
+                application.yaml
+        pom.xml
+        Dockerfile
+```
+
+??? info "Source"
+
+    === "pom.xml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/pom.xml"
+        ```
+
+    === "application.yaml"
+
+        ``` { .yaml .copy .select linenums="1" }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/resources/application.yaml"
+        ```
+
+    === "AuthApplication.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/AuthApplication.java"
+        ```
+
+    === "AuthParser.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/AuthParser.java"
+        ```
+
+    === "AuthResource.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/AuthResource.java"
+        ```
+
+    === "AuthService.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/AuthService.java"
+        ```
+
+    === "JwtService.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/JwtService.java"
+        ```
+
+    === "Register.java"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/src/main/java/store/auth/Register.java"
+        ```
+
+    === "Dockerfile"
+
+        ``` { .java .copy .select linenums='1' }
+        --8<-- "https://raw.githubusercontent.com/Insper/platform/refs/heads/main/api/auth-service/Dockerfile"
+        ```
+
 
 === "Register"
     
