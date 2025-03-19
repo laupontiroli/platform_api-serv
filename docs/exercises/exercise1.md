@@ -55,8 +55,10 @@ Or, you can scrape the data from a website.
             gateway e1@==> exchange:::exchange
             e1@{ animate: true }
         end
-        internet e2@==>|request| gateway
+        exchange e2@==> 3partyapi@{label: "3rd-party API"}
+        internet e3@==>|request| gateway
         e2@{ animate: true }
+        e3@{ animate: true }
         classDef exchange fill:#f99
     ```
 
