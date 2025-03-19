@@ -207,4 +207,5 @@ Additionals features are welcome, such as:
 ## Nice to have
 
 - Observability (metrics, logs), see Prometheus and Grafana;
+- Database In-Memory;
 - Swagger documentation.
