@@ -201,4 +201,6 @@ Additionals features are welcome, such as:
 - Authorization by role (admin, user):
     * Admin can create, update, and delete products;
     * User can only create orders;
+- Input validations;
+- Error handling;
 - Swagger documentation.
