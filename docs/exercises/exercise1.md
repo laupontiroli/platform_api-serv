@@ -16,7 +16,8 @@ Using FastAPI[^1] (or other framework) on Python :material-information-outline:{
         {
             "sell": 0.82,
             "buy": 0.80,
-            "date": "2021-09-01"
+            "date": "2021-09-01 14:23:42",
+            "id-account": "0195ae95-5be7-7dd3-b35d-7a7d87c404fb"
         }
         ```
         ```bash

@@ -37,3 +37,8 @@ services:
       - LOGGING_LEVEL_STORE=${LOGGING_LEVEL_STORE:-debug}
     ports:
       - 8080:8080
+
+  exchange:
+    build:
+      context: ./exchange-service
+      dockerfile: Dockerfile

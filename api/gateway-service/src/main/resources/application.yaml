@@ -24,6 +24,11 @@ spring:
           predicates:
             - Path=/auth/**
 
+        - id: exchange
+          uri: http://exchange:80
+          predicates:
+            - Path=/exchange/**
+
 logging:
   level:
     store: ${LOGGING_LEVEL_STORE:debug}
