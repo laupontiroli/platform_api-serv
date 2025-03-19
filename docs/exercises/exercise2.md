@@ -202,5 +202,9 @@ Additionals features are welcome, such as:
     * Admin can create, update, and delete products;
     * User can only create orders;
 - Input validations;
-- Error handling;
+- Error handling.
+
+## Nice to have
+
+- Observability (metrics, logs), see Prometheus and Grafana;
 - Swagger documentation.
