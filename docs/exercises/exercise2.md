@@ -195,7 +195,7 @@ The API should have the following endpoints:
 
 ## Additionals
 
-Additionals features are welcome, such as:
+Additional features are welcome, such as:
 
 - Search products by "like" name;
 - Authorization by role (admin, user):
