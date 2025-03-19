@@ -44,12 +44,20 @@ Or, you can scrape the data from a website.
 
     ``` mermaid
     flowchart LR
-    subgraph api
-        direction TB
-        gateway --> exchange
-    end
-    internet e1@==>|request| gateway
-    e1@{ animate: true }
+        subgraph api
+            direction TB
+            gateway --> account
+            gateway --> auth
+            gateway --> others
+            account --> db@{ shape: cyl, label: "Database" }
+            others --> db
+            auth --> account
+            gateway e1@==> exchange:::exchange
+            e1@{ animate: true }
+        end
+        internet e2@==>|request| gateway
+        e2@{ animate: true }
+        classDef exchange fill:#f99
     ```
 
 [^1]: [FastAPI - First Steps](https://fastapi.tiangolo.com/tutorial/first-steps/){target="_blank"}.
