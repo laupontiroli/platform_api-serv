@@ -5,6 +5,31 @@ Create a RESTful API for a store. The API should have two main resources: `produ
 
     **To consume the API, the user must be authenticated.**
 
+``` mermaid
+flowchart LR
+    subgraph api
+        direction TB
+        gateway --> account
+        gateway --> auth
+        gateway --> others
+        account --> db@{ shape: cyl, label: "Database" }
+        others --> db
+        auth --> account
+        gateway --> exchange
+        gateway --> product:::color
+        gateway --> order:::color
+        product --> db
+        order --> db
+        order --> product
+    end
+    exchange e2@==> 3partyapi@{label: "3rd-party API"}
+    internet e3@==>|request| gateway
+    e2@{ animate: true }
+    e3@{ animate: true }
+    classDef color fill:#f99
+```
+
+
 ## Product API
 
 The API should have the following endpoints:
@@ -99,7 +124,7 @@ The API should have the following endpoints:
 
         ``` { .json .copy .select linenums='1' }
         {
-            "products": [
+            "items": [
                 {
                     "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2
@@ -118,7 +143,7 @@ The API should have the following endpoints:
         {
             "id": "0195ac33-73e5-7cb3-90ca-7b5e7e549569",
             "date": "2025-09-01T12:30:00",
-            "products": [
+            "items": [
                 {
                     "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2,
@@ -173,7 +198,7 @@ The API should have the following endpoints:
         {
             "id": "0195ac33-73e5-7cb3-90ca-7b5e7e549569",
             "date": "2025-09-01T12:30:00",
-            "products": [
+            "items": [
                 {
                     "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2,
