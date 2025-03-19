@@ -134,7 +134,7 @@ nav:
     - 2. Gateway Spring Cloud: checkpoints/checkpoint2.md
     - 3. Security Spring Cloud: checkpoints/checkpoint3.md
     - 4. DevOps: checkpoints/checkpoint4.md
-    - 5. Kubernetes: checkpoints/checkpoint5.md
+    - 5. Orchestration: checkpoints/checkpoint5.md
   - Exercises:
     - 1. Exchange API: exercises/exercise1.md
     - 2. Order and Product APIs: exercises/exercise2.md
