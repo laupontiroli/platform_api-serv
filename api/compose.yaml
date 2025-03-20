@@ -30,10 +30,9 @@ services:
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:-yrBBgYlvJQeslzFlgX9MFZccToI2fjRFqualquercoisa}
 
   gateway:
-    image: hsandmann/gateway-service:latest
-    # build:
-    #   context: ./gateway-service
-    #   dockerfile: Dockerfile
+    build:
+      context: ./gateway-service
+      dockerfile: Dockerfile
     environment:
       - LOGGING_LEVEL_STORE=${LOGGING_LEVEL_STORE:-debug}
     ports:

@@ -16,17 +16,23 @@ flowchart LR
         others --> db
         auth --> account
         gateway --> exchange
-        gateway --> product:::color
-        gateway --> order:::color
-        product --> db
-        order --> db
-        order --> product
+        gateway e5@==> product:::color
+        gateway e6@==> order:::color
+        product e2@==> db
+        order e3@==> db
+        order e4@==> product
     end
-    exchange e2@==> 3partyapi@{label: "3rd-party API"}
-    internet e3@==>|request| gateway
+    exchange --> 3partyapi@{label: "3rd-party API"}
+    internet e1@==>|request| gateway
+    e1@{ animate: true }
     e2@{ animate: true }
     e3@{ animate: true }
-    classDef color fill:#f99
+    e4@{ animate: true }
+    e5@{ animate: true }
+    e6@{ animate: true }
+    classDef color fill:#f22
+    click product "#product-api" "Product API"
+    click order "#order-api" "Order API"
 ```
 
 
@@ -160,7 +166,7 @@ The API should have the following endpoints:
         ```
         ```bash
         Response code: 201 (created)
-        Response code: 404 (not found), if the product does not exist.
+        Response code: 400 (bad request), if the product does not exist.
         ```
 
 !!! info "GET /order"

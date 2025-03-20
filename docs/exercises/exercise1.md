@@ -52,14 +52,15 @@ Or, you can scrape the data from a website.
             account --> db@{ shape: cyl, label: "Database" }
             others --> db
             auth --> account
-            gateway e1@==> exchange:::exchange
+            gateway e1@==> exchange:::color
             e1@{ animate: true }
         end
         exchange e2@==> 3partyapi@{label: "3rd-party API"}
         internet e3@==>|request| gateway
         e2@{ animate: true }
         e3@{ animate: true }
-        classDef exchange fill:#f99
+        classDef color fill:#f22
+        click exchange "#exchange-api" "Exchange API"
     ```
 
 [^1]: [FastAPI - First Steps](https://fastapi.tiangolo.com/tutorial/first-steps/){target="_blank"}.
