@@ -1,9 +1,6 @@
 
 Create a RESTful API for a store. The API should have two main resources: `product` and `order`.
 
-!!! warning "Attention"
-
-    **To consume the API, the user must be authenticated.**
 
 ``` mermaid
 flowchart LR
@@ -35,6 +32,9 @@ flowchart LR
     click order "#order-api" "Order API"
 ```
 
+!!! warning "Attention"
+
+    **To consume the API, the user must be authenticated.**
 
 ## Product API
 
