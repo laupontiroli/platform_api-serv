@@ -237,6 +237,6 @@ Additional features are welcome, such as:
 
 ## Nice to have
 
-- Observability (metrics, logs), see Prometheus and Grafana;
-- Database In-Memory (suggestion: Product microservice), see Redis;
-- Swagger documentation.
+- Observability (metrics, logs), see [Prometheus](https://prometheus.io/){target="_blank"} and [Grafana](https://grafana.com/){target="_blank"};
+- Database In-Memory (suggestion: Product microservice), see [Redis](https://redis.io/){target="_blank"};
+- Swagger documentation, see [SpringDoc](https://springdoc.org/){target="_blank"}.
