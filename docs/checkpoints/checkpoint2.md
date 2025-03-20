@@ -5,15 +5,16 @@ The main functionality of Gateway Microservice is to route the incoming requests
 flowchart LR
     subgraph api
         direction TB
-        gateway --> account
-        gateway --> auth
-        gateway --> others
+        gateway e2@==> account
+        gateway e4@==> others
         account --> db@{ shape: cyl, label: "Database" }
         others --> db
-        auth --> account
     end
-    internet e1@==>|request| gateway
+    internet e1@==>|request| gateway:::color
     e1@{ animate: true }
+    e2@{ animate: true }
+    e4@{ animate: true }
+    classDef color fill:#f22
 ```
 
 The key functionalities of Gateway Microservice are:
