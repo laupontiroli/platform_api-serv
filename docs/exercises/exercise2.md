@@ -4,17 +4,15 @@ Create a RESTful API for a store. The API should have two main resources: `produ
 
 ``` mermaid
 flowchart LR
-    subgraph api
+    subgraph api [Trusted Layer]
         direction TB
         gateway --> account
         gateway --> auth
-        gateway --> others
         account --> db@{ shape: cyl, label: "Database" }
-        others --> db
         auth --> account
         gateway --> exchange
-        gateway e5@==> product:::color
-        gateway e6@==> order:::color
+        gateway e5@==> product:::red
+        gateway e6@==> order:::red
         product e2@==> db
         order e3@==> db
         order e4@==> product
@@ -27,7 +25,7 @@ flowchart LR
     e4@{ animate: true }
     e5@{ animate: true }
     e6@{ animate: true }
-    classDef color fill:#f22
+    classDef red fill:#fcc
     click product "#product-api" "Product API"
     click order "#order-api" "Order API"
 ```

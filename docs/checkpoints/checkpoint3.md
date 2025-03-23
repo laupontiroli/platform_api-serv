@@ -7,21 +7,21 @@ A secutiry of the system is a very important aspect of the system. All security 
 
 ``` mermaid
 flowchart LR
-    subgraph api
+    subgraph api [Trusted Layer]
         direction TB
         gateway --> account
         gateway --> others
-        gateway e4@==> auth:::primary
+        gateway e4@==> auth:::red
         auth e2@==> account
         account --> db@{ shape: cyl, label: "Database" }
         others --> db
     end
-    internet e1@==>|request| gateway:::secondary
+    internet e1@==>|request| gateway:::orange
     e1@{ animate: true }
     e2@{ animate: true }
     e4@{ animate: true }
-    classDef primary fill:#f22
-    classDef secondary fill:#FA9C1C
+    classDef red fill:#fcc
+    classDef orange fill:#FCBE3E
 ```
 
 

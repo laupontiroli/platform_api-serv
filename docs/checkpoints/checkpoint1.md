@@ -79,7 +79,7 @@ The construction of the Account microservice follows the Clean Architecture appr
 
 ``` mermaid
 sequenceDiagram
-    title Clean architecture's approach    
+    title Clean architecture's approach 
     Actor Request
     Request ->>+ Controller: 
     Controller ->>+ Service: parser (AccountIn -> Account)
@@ -93,20 +93,16 @@ sequenceDiagram
 
 Previously to build the Account microservice, it is necessary to prepare the environment by installing the database to persist the data. For that, we will use a Docker Compose file to create a PostgreSQL container, as well as, a cluster to isolate the microservices from external access, creating a secure environment - trusted layer. A Docker Compose file is a YAML file that defines how Docker containers should behave in production. The file contains the configuration for the database, the microservices, and the network configuration.
 
-
 ``` mermaid
-architecture-beta
-
-    service internet(internet)[request]
-
-    group api(cloud)[Docker Compose]
-
-    service db(database)[db] in api
-    service account(server)[account] in api
-
-    internet:R --> L:account
-
-    db:L -- R:account
+flowchart LR
+    subgraph api [Trusted Layer]
+        direction TB
+        account e3@==> db@{ shape: cyl, label: "Database" }
+    end
+    internet e1@==>|request| account:::red
+    e1@{ animate: true }
+    e3@{ animate: true }
+    classDef red fill:#fcc
 ```
 
 ## Docker Compose

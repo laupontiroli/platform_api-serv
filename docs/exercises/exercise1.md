@@ -44,22 +44,20 @@ Or, you can scrape the data from a website.
 
     ``` mermaid
     flowchart LR
-        subgraph api
+        subgraph api [Trusted Layer]
             direction TB
             gateway --> account
             gateway --> auth
-            gateway --> others
             account --> db@{ shape: cyl, label: "Database" }
-            others --> db
             auth --> account
-            gateway e1@==> exchange:::color
+            gateway e1@==> exchange:::red
             e1@{ animate: true }
         end
         exchange e2@==> 3partyapi@{label: "3rd-party API"}
         internet e3@==>|request| gateway
         e2@{ animate: true }
         e3@{ animate: true }
-        classDef color fill:#f22
+        classDef red fill:#fcc
         click exchange "#exchange-api" "Exchange API"
     ```
 
