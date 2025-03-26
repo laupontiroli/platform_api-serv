@@ -3,18 +3,18 @@ The main functionality of Gateway Microservice is to route the incoming requests
 
 ``` mermaid
 flowchart LR
-    subgraph api
+    subgraph api [Trusted Layer]
         direction TB
         gateway e2@==> account
         gateway e4@==> others
         account --> db@{ shape: cyl, label: "Database" }
         others --> db
     end
-    internet e1@==>|request| gateway:::color
+    internet e1@==>|request| gateway:::red
     e1@{ animate: true }
     e2@{ animate: true }
     e4@{ animate: true }
-    classDef color fill:#f22
+    classDef red fill:#fcc
 ```
 
 The key functionalities of Gateway Microservice are:
