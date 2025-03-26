@@ -110,6 +110,8 @@ plugins:
       repository: hsandmann/hsandmann.github.com
       branch: main
   - search
+  - minify:
+      minify_html: true
   - badges
   - markdown-exec
   - render_swagger:
