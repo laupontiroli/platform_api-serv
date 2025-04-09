@@ -130,11 +130,11 @@ The API should have the following endpoints:
         {
             "items": [
                 {
-                    "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
+                    "idProduct": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2
                 },
                 {
-                    "id": "0195abfe-e416-7052-be3b-27cdaf12a984",
+                    "idProduct": "0195abfe-e416-7052-be3b-27cdaf12a984",
                     "quantity": 1
                 }
             ]
@@ -149,12 +149,14 @@ The API should have the following endpoints:
             "date": "2025-09-01T12:30:00",
             "items": [
                 {
-                    "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
+                    "id": "01961b9a-bca2-78c4-9be1-7092b261f217",
+                    "idProduct": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2,
                     "total": 20.24
                 },
                 {
-                    "id": "0195abfe-e416-7052-be3b-27cdaf12a984",
+                    "id": "01961b9b-08fd-76a5-8508-cdb6cd5c27ab",
+                    "idProduct": "0195abfe-e416-7052-be3b-27cdaf12a984",
                     "quantity": 10,
                     "total": 6.2
                 }
@@ -204,12 +206,14 @@ The API should have the following endpoints:
             "date": "2025-09-01T12:30:00",
             "items": [
                 {
-                    "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
+                    "id": "01961b9a-bca2-78c4-9be1-7092b261f217",
+                    "idProduct": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
                     "quantity": 2,
                     "total": 20.24
                 },
                 {
-                    "id": "0195abfe-e416-7052-be3b-27cdaf12a984",
+                    "id": "01961b9b-08fd-76a5-8508-cdb6cd5c27ab",
+                    "idProduct": "0195abfe-e416-7052-be3b-27cdaf12a984",
                     "quantity": 10,
                     "total": 6.2
                 }
