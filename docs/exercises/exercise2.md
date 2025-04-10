@@ -150,13 +150,17 @@ The API should have the following endpoints:
             "items": [
                 {
                     "id": "01961b9a-bca2-78c4-9be1-7092b261f217",
-                    "idProduct": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8",
+                    "product": {
+                        "id": "0195abfb-7074-73a9-9d26-b4b9fbaab0a8"
+                    },
                     "quantity": 2,
                     "total": 20.24
                 },
                 {
                     "id": "01961b9b-08fd-76a5-8508-cdb6cd5c27ab",
-                    "idProduct": "0195abfe-e416-7052-be3b-27cdaf12a984",
+                    "product": {
+                        "id": "0195abfe-e416-7052-be3b-27cdaf12a984"
+                    },
                     "quantity": 10,
                     "total": 6.2
                 }
