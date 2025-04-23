@@ -42,7 +42,9 @@ services:
     ports:
       - 8080:8080
 
-  # exchange:
-  #   build:
-  #     context: ./exchange-service
-  #     dockerfile: Dockerfile
+  exchange:
+    hostname: exchange
+    build:
+      context: ./exchange-service
+      dockerfile: Dockerfile
+
